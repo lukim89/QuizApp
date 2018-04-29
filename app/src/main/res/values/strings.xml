@@ -1,0 +1,60 @@
+<resources>
+    <string name="app_name">Quiz App</string>
+    <string name="title">Quiz about Poland</string>
+
+    <string name="question_1">1. Which of these countries borders Poland?</string>
+    <string name="answer_1_1">Russia</string>
+    <string name="answer_1_2">Germany</string>
+    <string name="answer_1_3">Turkey</string>
+    <string name="answer_1_4">Ukraine</string>
+
+    <string name="question_2">2. Which are the colours of Polish flag?</string>
+    <string name="answer_2_1">White and red</string>
+    <string name="answer_2_2">Blue and yellow</string>
+    <string name="answer_2_3">Red and white</string>
+    <string name="answer_2_4">Blue and red</string>
+
+    <string name="question_3">3. What is the capital Of Poland?</string>
+    <string name="answer_3_1">Kraków (Cracow)</string>
+    <string name="answer_3_2">Warszawa (Warsaw)</string>
+    <string name="answer_3_3">Wrocław</string>
+    <string name="answer_3_4">Gdańsk</string>
+
+    <string name="question_4">4. How many millions of people live in Poland?</string>
+    <string name="question_4_comment">(acceptable error is 1 million)</string>
+    <string name="question_4_unit">million</string>
+
+    <string name="question_5">5. Which of these animals is found in Poland?</string>
+    <string name="answer_5_1">Giraffe</string>
+    <string name="answer_5_2">European bison</string>
+    <string name="answer_5_3">Reindeer</string>
+    <string name="answer_5_4">White stork</string>
+
+    <string name="question_6">6. The official name of Poland is… </string>
+    <string name="answer_6_1">Polish People\'s Republic</string>
+    <string name="answer_6_2">State of Poland</string>
+    <string name="answer_6_3">Republic of Poland</string>
+    <string name="answer_6_4">Polish Federation</string>
+
+    <string name="question_7">7. Karol Wojtyła was…</string>
+    <string name="answer_7_1">Famous football player</string>
+    <string name="answer_7_2">Spaceman</string>
+    <string name="answer_7_3">Polish president</string>
+    <string name="answer_7_4">Pope John Paul II</string>
+
+    <string name="question_8">8. What is on the Polish emblem?</string>
+    <string name="answer_8_1">White eagle</string>
+    <string name="answer_8_2">Bear</string>
+    <string name="answer_8_3">Fish</string>
+    <string name="answer_8_4">Black eagle</string>
+
+    <string name="question_9">9. What is grown in Poland?</string>
+    <string name="answer_9_1">Tobacco</string>
+    <string name="answer_9_2">Apples</string>
+    <string name="answer_9_3">Pineapples</string>
+    <string name="answer_9_4">Carrots</string>
+
+    <string name="check_button">check</string>
+    <string name="reset_button">reset</string>
+    <string name="answer_4_hint">00</string>
+</resources>
