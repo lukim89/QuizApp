@@ -1,6 +1,5 @@
 package com.example.android.quizapp;
 
-import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -13,15 +12,8 @@ import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
-    boolean question_1 = false;
-    boolean question_2 = false;
-    boolean question_3 = false;
-    boolean question_4 = false;
-    boolean question_5 = false;
-    boolean question_6 = false;
-    boolean question_7 = false;
-    boolean question_8 = false;
-    boolean question_9 = false;
+    int numberOfQuestions = 9;
+    int numberOfNotAnsweredQuestions = numberOfQuestions;
     CheckBox answer_1_1, answer_1_2, answer_1_3, answer_1_4;
     CheckBox answer_5_1, answer_5_2, answer_5_3, answer_5_4;
     CheckBox answer_9_1, answer_9_2, answer_9_3, answer_9_4;
@@ -73,24 +65,22 @@ public class MainActivity extends AppCompatActivity {
 
     public void questionCheck1() {
         if (answer_1_1.isChecked() || answer_1_2.isChecked() || answer_1_3.isChecked() || answer_1_4.isChecked())
-            question_1 = true;
+            numberOfNotAnsweredQuestions--;
         if (answer_1_1.isChecked() && answer_1_2.isChecked() && !answer_1_3.isChecked() && answer_1_4.isChecked())
             score++;
     }
 
     public void questionCheck2() {
-        if (radioGroup_2.getCheckedRadioButtonId() == -1) {
-        } else {
-            question_2 = true;
+        if (!(radioGroup_2.getCheckedRadioButtonId() == -1)) {
+            numberOfNotAnsweredQuestions--;
             if (answer_2_1.isChecked())
                 score++;
         }
     }
 
     public void questionCheck3() {
-        if (radioGroup_3.getCheckedRadioButtonId() == -1) {
-        } else {
-            question_3 = true;
+        if (!(radioGroup_3.getCheckedRadioButtonId() == -1)) {
+            numberOfNotAnsweredQuestions--;
             if (answer_3_2.isChecked())
                 score++;
         }
@@ -99,7 +89,7 @@ public class MainActivity extends AppCompatActivity {
     public void questionCheck4() {
         boolean hasValue = !answer_4.getText().toString().trim().isEmpty();
         if (hasValue) {
-            question_4 = true;
+            numberOfNotAnsweredQuestions--;
             answer_4int = Integer.parseInt(answer_4.getText().toString());
             if (answer_4int > 36 && answer_4int < 40)
                 score++;
@@ -108,33 +98,30 @@ public class MainActivity extends AppCompatActivity {
 
     public void questionCheck5() {
         if (answer_5_1.isChecked() || answer_5_2.isChecked() || answer_5_3.isChecked() || answer_5_4.isChecked())
-            question_5 = true;
+            numberOfNotAnsweredQuestions--;
         if (!answer_5_1.isChecked() && answer_5_2.isChecked() && !answer_5_3.isChecked() && answer_5_4.isChecked())
             score++;
     }
 
     public void questionCheck6() {
-        if (radioGroup_6.getCheckedRadioButtonId() == -1) {
-        } else {
-            question_6 = true;
+        if (!(radioGroup_6.getCheckedRadioButtonId() == -1)) {
+            numberOfNotAnsweredQuestions--;
             if (answer_6_3.isChecked())
                 score++;
         }
     }
 
     public void questionCheck7() {
-        if (radioGroup_7.getCheckedRadioButtonId() == -1) {
-        } else {
-            question_7 = true;
+        if (!(radioGroup_7.getCheckedRadioButtonId() == -1)) {
+            numberOfNotAnsweredQuestions--;
             if (answer_7_4.isChecked())
                 score++;
         }
     }
 
     public void questionCheck8() {
-        if (radioGroup_8.getCheckedRadioButtonId() == -1) {
-        } else {
-            question_8 = true;
+        if (!(radioGroup_8.getCheckedRadioButtonId() == -1)) {
+            numberOfNotAnsweredQuestions--;
             if (answer_8_1.isChecked())
                 score++;
         }
@@ -142,7 +129,7 @@ public class MainActivity extends AppCompatActivity {
 
     public void questionCheck9() {
         if (answer_9_1.isChecked() || answer_9_2.isChecked() || answer_9_3.isChecked() || answer_9_4.isChecked())
-            question_9 = true;
+            numberOfNotAnsweredQuestions--;
         if (answer_9_1.isChecked() && answer_9_2.isChecked() && !answer_9_3.isChecked() && answer_9_4.isChecked())
             score++;
     }
@@ -177,15 +164,7 @@ public class MainActivity extends AppCompatActivity {
 
     public void check(View view) {
         score = 0;
-        question_1 = false;
-        question_2 = false;
-        question_3 = false;
-        question_4 = false;
-        question_5 = false;
-        question_6 = false;
-        question_7 = false;
-        question_8 = false;
-        question_9 = false;
+        numberOfNotAnsweredQuestions = numberOfQuestions;
         questionCheck1();
         questionCheck2();
         questionCheck3();
@@ -196,7 +175,7 @@ public class MainActivity extends AppCompatActivity {
         questionCheck8();
         questionCheck9();
 
-        if (question_1 && question_2 && question_3 && question_4 && question_5 && question_6 && question_7 && question_8 && question_9) {
+        if (numberOfNotAnsweredQuestions == 0) {
             Toast.makeText(this, "Yours score is " + score + "/9", Toast.LENGTH_SHORT).show();
         } else
             Toast.makeText(this, "First answer all the questions.", Toast.LENGTH_SHORT).show();
